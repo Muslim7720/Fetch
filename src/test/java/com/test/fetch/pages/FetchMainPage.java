@@ -79,9 +79,9 @@ public class FetchMainPage {
 
 
     public void checkByResult() throws InterruptedException {
-        if (result.getText().equalsIgnoreCase("<")){
+        if (result.getText().equals("<")){
             findFakeCoin(0);
-        } else if (result.getText().equalsIgnoreCase(">")) {
+        } else if (result.getText().equals(">")) {
             findFakeCoin(3);
         } else {
             findFakeCoin(6);
