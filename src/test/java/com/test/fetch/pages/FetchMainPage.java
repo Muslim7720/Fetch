@@ -32,6 +32,12 @@ public class FetchMainPage {
     @FindBy(xpath = "//button[.='Reset']")
     WebElement resetButton;
 
+    @FindBy(xpath = "//div[@class='game-board'][1]//div[2]//input")
+    List<WebElement> leftBowlFirstRow;
+
+    @FindBy(xpath = "//div[@class='game-board'][2]//div[2]//input")
+    List<WebElement> rightBowlFirstRow;
+
     @FindBy(css = "#left_0")
     WebElement leftBowl1_1;
 
@@ -80,15 +86,15 @@ public class FetchMainPage {
     }
 
     public void putFirstThreeNumbersLeftBowl(){
-        leftBowl1_1.sendKeys("0");
-        leftBowl1_2.sendKeys("1");
-        leftBowl1_3.sendKeys("2");
+        leftBowlFirstRow.get(0).sendKeys("0");
+        leftBowlFirstRow.get(1).sendKeys("1");
+        leftBowlFirstRow.get(2).sendKeys("2");
     }
 
     public void putSecondThreeNumbersRightBowl(){
-        rightBowl1_1.sendKeys("3");
-        rightBowl1_2.sendKeys("4");
-        rightBowl1_3.sendKeys("5");
+        rightBowlFirstRow.get(0).sendKeys("3");
+        rightBowlFirstRow.get(1).sendKeys("4");
+        rightBowlFirstRow.get(2).sendKeys("5");
     }
 
 
@@ -104,8 +110,8 @@ public class FetchMainPage {
 
     public void findFakeCoin(int i) throws InterruptedException {
         clickResetButton();
-        leftBowl1_1.sendKeys(coins.get(i).getText());
-        rightBowl1_1.sendKeys(coins.get(i+1).getText());
+        leftBowlFirstRow.get(0).sendKeys(coins.get(i).getText());
+        rightBowlFirstRow.get(0).sendKeys(coins.get(i+1).getText());
         clickWeighButton2();
         if(result.getText().equalsIgnoreCase("<")){
             coins.get(i).click();
