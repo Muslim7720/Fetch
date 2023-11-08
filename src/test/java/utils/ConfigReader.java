@@ -11,7 +11,6 @@ public class ConfigReader {
 
         File file = new File("configuration.properties");
         Properties properties = new Properties();
-        //this properties will read the properties file
         try {
             properties.load(new FileInputStream(file));
         } catch (IOException e) {

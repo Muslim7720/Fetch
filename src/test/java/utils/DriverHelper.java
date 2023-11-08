@@ -15,12 +15,11 @@ public class DriverHelper {
 
     private DriverHelper() {
     }
-    //You cannot create an object from this class. It means you cannot manipulate data here
+
 
     public static WebDriver getDriver() {
         if (driver == null || ((RemoteWebDriver) driver).getSessionId() == null) {
 
-//            String browser = "chrome";
             switch (ConfigReader.readProperty("browser")) {
 
                 case "chrome":
