@@ -13,7 +13,6 @@ public class FakeAlert extends FetchTestBaseClass {
         FetchMainPage fetchMainPage = new FetchMainPage(driver);
         fetchMainPage.putFirstThreeNumbersLeftBowl();
         fetchMainPage.putSecondThreeNumbersRightBowl();
-        fetchMainPage.clickWeighButton1();
         fetchMainPage.checkByResult();
         fetchMainPage.messageValidation();
 

@@ -38,35 +38,14 @@ public class FetchMainPage {
     @FindBy(xpath = "//div[@class='game-board'][2]//div[2]//input")
     List<WebElement> rightBowlFirstRow;
 
-    @FindBy(css = "#left_0")
-    WebElement leftBowl1_1;
-
-    @FindBy(css = "#left_1")
-    WebElement leftBowl1_2;
-
-    @FindBy(css = "#left_2")
-    WebElement leftBowl1_3;
-
-    @FindBy(css = "#right_0")
-    WebElement rightBowl1_1;
-
-    @FindBy(css = "#right_1")
-    WebElement rightBowl1_2;
-
-    @FindBy(css = "#right_2")
-    WebElement rightBowl1_3;
-
     @FindBy(xpath = "//ol//li")
     WebElement weighing1;
 
     @FindBy(xpath = "//ol/li[2]")
     WebElement weighing2;
 
-
-
     @FindBy(xpath = "//div[@class='coins']//button")
     List<WebElement> coins;
-
 
 
     public void clickWeighButton1() throws InterruptedException {
@@ -91,10 +70,11 @@ public class FetchMainPage {
         leftBowlFirstRow.get(2).sendKeys("2");
     }
 
-    public void putSecondThreeNumbersRightBowl(){
+    public void putSecondThreeNumbersRightBowl() throws InterruptedException {
         rightBowlFirstRow.get(0).sendKeys("3");
         rightBowlFirstRow.get(1).sendKeys("4");
         rightBowlFirstRow.get(2).sendKeys("5");
+        clickWeighButton1();
     }
 
 
